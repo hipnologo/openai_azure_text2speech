@@ -2,6 +2,12 @@
 
 This is a Python script that takes the URL of a webpage as a prompt, uses OpenAI's Davinci engine to generate text from the prompt, and converts the resulted text to speech using Azure's Text-to-Speech API. The script is built using `streamlit` to display the results in a web interface.
 
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![Forks](https://img.shields.io/github/forks/hipnologo/openai_azure_text2speech)](https://github.com/hipnologo/openai_azure_text2speech/network/members)
+[![Stars](https://img.shields.io/github/stars/hipnologo/openai_azure_text2speech)](https://github.com/hipnologo/openai_azure_text2speech/stargazers)
+[![Issues](https://img.shields.io/github/issues/hipnologo/openai_azure_text2speech)](https://github.com/hipnologo/openai_azure_text2speech/issues)
+[![GitHub contributors](https://img.shields.io/github/contributors/hipnologo/openai_azure_text2speech)](https://github.com/hipnologo/openai_azure_text2speech/graphs/contributors)
+
 ## Prerequisites
 
 - An OpenAI API key: you can get it from [OpenAI's website](https://beta.openai.com/signup/).
