@@ -37,3 +37,5 @@ We welcome contributions to this project! If you have an idea for a feature or b
 5. Submit a pull request to the original repository.
 
 Make sure to follow the code style and add test cases for any new code. If you have any questions, don't hesitate to ask the repository maintainers.
+
+<a href="https://www.buymeacoffee.com/hipnologod" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/default-orange.png" alt="Buy Me A Coffee" height="41" width="174"></a>
