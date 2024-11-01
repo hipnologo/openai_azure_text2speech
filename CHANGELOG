@@ -8,6 +8,14 @@ All notable changes to this project will be documented in this file.
 
 ---
 
+## [1.1.2] - 2024-10-31
+### Added
+- **Docstrings**: Added detailed docstrings for each function in `app.py`, documenting functionality, parameters, and return values.
+
+### Updated
+- **Dependency Versions**: Updated `requirements.txt` to the latest versions of dependencies, ensuring compatibility and access to the newest features.
+- **Error Messages**: Improved error handling with specific messages for OpenAI and Azure API interactions to enhance debugging and user feedback.
+
 ## [1.1.1] - 2024-10-31
 ### Updated
 - **README.md**: Revised to include updated setup instructions, usage examples, and detailed descriptions for the OpenAI & Azure Text-to-Speech functionalities.

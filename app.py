@@ -43,14 +43,32 @@ import io
 
 load_dotenv()
 
-# Function for truncating text to stay within token limits
 def truncate_text(text, max_tokens):
+    """
+    Truncates the input text to stay within the maximum token limit.
+
+    Args:
+        text (str): The input text to truncate.
+        max_tokens (int): The maximum number of tokens allowed.
+
+    Returns:
+        str: The truncated text.
+    """
     tokens = re.findall(r'\w+|\W+', text)
     truncated_tokens = tokens[:max_tokens]
     return ''.join(truncated_tokens)
 
-# OpenAI API function with the latest model and method
 def get_openai_text(prompt, limit_tokens):
+    """
+    Sends a prompt to the OpenAI API and retrieves a generated response.
+
+    Args:
+        prompt (str): The text prompt for OpenAI to process.
+        limit_tokens (int): The maximum number of tokens in the response.
+
+    Returns:
+        str: The generated text from OpenAI, or None if an error occurs.
+    """
     openai.api_key = os.getenv("OPENAI_API_KEY")
     try:
         response = openai.ChatCompletion.create(
@@ -65,6 +83,12 @@ def get_openai_text(prompt, limit_tokens):
         return None
 
 def get_azure_access_token():
+    """
+    Retrieves an access token from Azure's Text-to-Speech API.
+
+    Returns:
+        str: The access token if successful, or None if an error occurs.
+    """
     azure_key = os.getenv("AZURE_API_KEY")
     try:
         response = requests.post(
@@ -81,6 +105,16 @@ def get_azure_access_token():
     return response.text
 
 def text_to_speech(text, voice_name='en-US-AriaNeural'):
+    """
+    Converts text to speech using Azure's Text-to-Speech API.
+
+    Args:
+        text (str): The text to convert to speech.
+        voice_name (str): The name of the voice for the speech output.
+
+    Returns:
+        bytes: The audio content in binary format, or None if an error occurs.
+    """
     access_token = get_azure_access_token()
     if not access_token:
         return None
@@ -110,6 +144,15 @@ def text_to_speech(text, voice_name='en-US-AriaNeural'):
     return response.content
 
 def extract_content(url):
+    """
+    Extracts and concatenates paragraph text content from a specified URL.
+
+    Args:
+        url (str): The URL of the webpage to extract content from.
+
+    Returns:
+        str: The concatenated text content of all paragraphs, or None if an error occurs.
+    """
     try:
         response = requests.get(url)
         response.raise_for_status()
@@ -120,6 +163,10 @@ def extract_content(url):
         return None
 
 def main():
+    """
+    The main function for running the Streamlit app. It provides the interface
+    for users to input text or URLs, select options, and generate text-to-speech output.
+    """
     st.title("OpenAI & Azure Text-to-Speech App")
     st.subheader("Generate Text with OpenAI and Convert it to Speech with Azure")
     st.info("Use OpenAI's API to generate text and Azure's API for text-to-speech. Choose to upload text, enter a URL, or paste text directly.")
