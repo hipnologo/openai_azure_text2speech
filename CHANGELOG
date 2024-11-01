@@ -1,0 +1,36 @@
+# CHANGELOG
+
+All notable changes to this project will be documented in this file.
+
+## [Unreleased]
+- Planned: Add language selection for multi-language text-to-speech support.
+- Planned: Add support for alternative TTS providers (Google, AWS).
+
+---
+
+## [1.1.1] - 2024-10-31
+### Updated
+- **README.md**: Revised to include updated setup instructions, usage examples, and detailed descriptions for the OpenAI & Azure Text-to-Speech functionalities.
+- **app.py**: Enhanced to support OpenAI's `gpt-4-turbo` model, enabling higher quality responses and improved API usage.
+- **Changelog Documentation**: Added new version details in `CHANGELOG.md` to reflect current and past updates.
+
+---
+
+## [1.1.0] - 2024-05-21
+### Added
+- **Voice Selection**: Added multiple voice options (`en-US-AriaNeural`, `en-US-GuyNeural`, `en-GB-RyanNeural`) for Azure TTS.
+- **Customizable Prompt Length**: Introduced slider to control token limit for OpenAI's response.
+- **Enhanced Error Handling**: Improved error messages for failed API requests (OpenAI and Azure).
+- **Downloadable Audio**: Users can now download the generated audio as a `.wav` file.
+
+### Updated
+- **OpenAI Model**: Switched to `gpt-4-turbo` model for improved performance and response quality.
+- **Text Truncation**: Implemented `truncate_text()` to ensure prompt length stays within API token limits.
+
+---
+
+## [1.0.0] - 2023-03-15
+### Initial Release
+- **Text Generation**: Fetches and processes text from a URL, text input, or file upload using OpenAI’s API.
+- **Text-to-Speech**: Converts generated text to speech using Azure TTS.
+- **Streamlit Interface**: Simple interface with options for text input, URL, and file upload.
