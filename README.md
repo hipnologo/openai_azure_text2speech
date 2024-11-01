@@ -67,6 +67,8 @@ We welcome contributions! To contribute:
 3. Make and test your changes.
 4. Submit a pull request.
 
+For a detailed guide, please refer to our [CONTRIBUTING.md](CONTRIBUTING.md) file.
+
 Make sure to follow the coding style and add test cases for any new code. Feel free to reach out if you have any questions.
 
 <a href="https://www.buymeacoffee.com/hipnologod" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/default-orange.png" alt="Buy Me A Coffee" height="41" width="174"></a>
