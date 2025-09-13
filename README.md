@@ -30,6 +30,11 @@
 - [🎙️ OpenAI \& Azure Text-to-Speech Application](#️-openai--azure-text-to-speech-application)
   - [📋 Table of Contents](#-table-of-contents)
   - [✨ Features](#-features)
+    - [🤖 **AI-Powered Text Generation**](#-ai-powered-text-generation)
+    - [🎤 **Advanced Text-to-Speech**](#-advanced-text-to-speech)
+    - [🔒 **Security \& Safety**](#-security--safety)
+    - [🖥️ **User-Friendly Interface**](#️-user-friendly-interface)
+    - [🛠️ **Developer-Friendly**](#️-developer-friendly)
   - [🎯 Use Cases](#-use-cases)
   - [🚀 Quick Start](#-quick-start)
   - [🛠️ Installation](#️-installation)
@@ -39,6 +44,9 @@
   - [📖 Usage](#-usage)
     - [Running the Application](#running-the-application)
     - [Input Methods](#input-methods)
+      - [1. **Text Input**](#1-text-input)
+      - [2. **URL Extraction**](#2-url-extraction)
+      - [3. **File Upload**](#3-file-upload)
     - [Configuration Options](#configuration-options)
   - [🔧 API Documentation](#-api-documentation)
     - [OpenAI Models Supported](#openai-models-supported)
@@ -47,11 +55,20 @@
   - [🏗️ Architecture](#️-architecture)
   - [🧪 Testing](#-testing)
   - [📊 Performance](#-performance)
-  - [🛣️ Roadmap](#️-roadmap)
+  - [🌟 Feature Wish List](#-feature-wish-list)
+    - [🚀 High Priority Features](#-high-priority-features)
+    - [🌍 User Experience Enhancements](#-user-experience-enhancements)
+    - [🔧 Developer \& Integration Features](#-developer--integration-features)
   - [🤝 Contributing](#-contributing)
+    - [Quick Contribution Steps](#quick-contribution-steps)
+    - [Development Setup](#development-setup)
   - [📄 License](#-license)
   - [🙏 Acknowledgments](#-acknowledgments)
   - [📞 Support](#-support)
+    - [🐛 Found a Bug?](#-found-a-bug)
+    - [💡 Feature Request?](#-feature-request)
+    - [💬 Need Help?](#-need-help)
+    - [🌟 Show Your Support](#-show-your-support)
 
 ## ✨ Features
 
@@ -298,24 +315,30 @@ pytest tests/ --cov=app --cov-report=html
 - **Memory Usage**: ~100-300MB during operation
 - **Concurrent Users**: Supports multiple users (limited by API quotas)
 
-## 🛣️ Roadmap
+## 🌟 Feature Wish List
 
-### Version 2.1.0 (Coming Soon)
-- [ ] **Batch Processing**: Process multiple files simultaneously
-- [ ] **Custom Voices**: Support for custom Azure voice models
-- [ ] **Export Options**: Additional audio formats (WAV, OGG)
-- [ ] **API Endpoint**: REST API for programmatic access
+We're always looking to improve this application! Here are some exciting features we'd love to see implemented by our community contributors. If you're interested in working on any of these, please check out our [Contributing Guide](CONTRIBUTING.md) and open an issue to discuss your approach.
 
-### Version 2.2.0 (Future)
-- [ ] **Multi-language UI**: Interface translations
-- [ ] **Voice Cloning**: ElevenLabs integration
-- [ ] **Advanced Analytics**: Usage statistics dashboard
-- [ ] **Webhook Support**: Integration with external services
+### 🚀 High Priority Features
 
-### Long-term Goals
-- [ ] **Mobile App**: React Native or Flutter app
-- [ ] **Enterprise Features**: User management, billing
-- [ ] **AI Optimization**: Model fine-tuning capabilities
+- [ ] **Batch Processing**: Process multiple files simultaneously for bulk operations
+- [ ] **Custom Voices**: Support for custom Azure voice models and voice cloning
+- [ ] **Export Options**: Additional audio formats (WAV, OGG, FLAC) beyond MP3
+- [ ] **REST API**: Programmatic access via REST API for integrations
+
+### 🌍 User Experience Enhancements
+
+- [ ] **Multi-language UI**: Interface translations for global accessibility
+- [ ] **Advanced Analytics**: Usage statistics and performance dashboards
+- [ ] **File Format Support**: Support for PDF, DOCX, and other document formats
+
+### 🔧 Developer & Integration Features
+
+- [ ] **Webhook Support**: Real-time notifications and external service integrations
+- [ ] **Plugin System**: Extensible architecture for custom processing pipelines
+- [ ] **Cloud Storage**: Direct integration with cloud storage providers
+
+**💡 Have an idea not listed here?** We'd love to hear it! Open a [feature request](https://github.com/hipnologo/openai_azure_text2speech/issues/new?labels=enhancement) and let's discuss how we can make it happen together.
 
 ## 🤝 Contributing
 
@@ -360,19 +383,24 @@ This project is licensed under the **Apache License 2.0** - see the [LICENSE](LI
 ## 📞 Support
 
 ### 🐛 Found a Bug?
+
 - Check existing [issues](https://github.com/hipnologo/openai_azure_text2speech/issues)
 - Create a new issue with detailed description
 
 ### 💡 Feature Request?
+
 - Open an [issue](https://github.com/hipnologo/openai_azure_text2speech/issues/new) with the `enhancement` label
 - Describe the feature and its benefits
 
 ### 💬 Need Help?
+
 - Check the [FAQ](https://github.com/hipnologo/openai_azure_text2speech/wiki/FAQ)
 - Join our [Discussions](https://github.com/hipnologo/openai_azure_text2speech/discussions)
 
 ### 🌟 Show Your Support
+
 If this project helped you, please consider:
+
 - ⭐ Starring the repository
 - 🐛 Reporting bugs
 - 💡 Suggesting new features
