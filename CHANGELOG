@@ -2,13 +2,94 @@
 
 All notable changes to this project will be documented in this file.
 
+The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
+and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
+
 ## [Unreleased]
-- Planned: Add language selection for multi-language text-to-speech support.
-- Planned: Add support for alternative TTS providers (Google, AWS).
+
+### Planned Features
+- Batch processing for multiple files
+- Additional audio format exports (WAV, OGG)
+- Custom Azure voice model support
+- REST API endpoint for programmatic access
+- Multi-language UI translations
+
+---
+
+## [2.0.0] - 2025-09-13
+
+### 🚨 BREAKING CHANGES
+- **API Update**: Migrated from deprecated OpenAI v0.28.0 to v1.50.0+ with new client pattern
+- **Azure Integration**: Replaced REST API calls with Azure Speech Services SDK
+- **Environment Variables**: Changed `AZURE_API_KEY` to `AZURE_SPEECH_KEY` and added `AZURE_SPEECH_REGION`
+- **Python Requirements**: Minimum Python version increased to 3.8+
+
+### ✨ Added
+- **Modern OpenAI Integration**: Updated to use latest OpenAI SDK with proper client initialization
+- **Enhanced Security**: Comprehensive input validation, XSS protection, and secure file handling
+- **Azure Speech SDK**: Native Azure Speech Services integration for better reliability
+- **Type Safety**: Full type hints throughout the codebase for better development experience
+- **Comprehensive Logging**: Structured logging system with security event tracking
+- **Input Validation**: Robust validation for URLs, text input, and file uploads
+- **Multiple Voice Support**: Extended voice selection including multiple languages
+- **Error Handling**: Improved error handling with user-friendly messages
+- **Security Features**:
+  - URL validation to prevent SSRF attacks
+  - File size and type restrictions
+  - Content sanitization to prevent XSS
+  - Secure credential management
+  - Request timeouts and rate limiting protection
+- **Developer Tools**:
+  - Pre-commit hooks configuration
+  - Code formatting with Black and isort
+  - Security scanning with Bandit
+  - Comprehensive documentation
+
+### 🔧 Changed
+- **Code Architecture**: Refactored to use classes and modular design patterns
+- **UI/UX Improvements**: Modern Streamlit interface with better organization
+- **Configuration Management**: Centralized configuration with proper validation
+- **Error Messages**: More informative and user-friendly error reporting
+- **Documentation**: Complete rewrite with best practices and comprehensive guides
+- **Contributing Guidelines**: Added legal disclaimers, CLA, and detailed contribution process
+
+### 🛡️ Security
+- **Input Sanitization**: All user inputs are validated and sanitized
+- **URL Validation**: Protection against malicious URLs and local file access
+- **File Upload Security**: Secure file handling with type and size restrictions
+- **API Key Protection**: Secure environment variable handling
+- **Content Security**: XSS protection and content sanitization
+- **Network Security**: Request timeouts and SSL certificate verification
+
+### 📚 Documentation
+- **README.md**: Complete rewrite with professional template and comprehensive documentation
+- **CONTRIBUTING.md**: Added legal disclaimers, liability information, and detailed contribution guidelines
+- **Code Documentation**: Comprehensive docstrings and type hints throughout
+- **Security Guidelines**: Detailed security practices for contributors
+- **Usage Examples**: Clear examples for all features
+
+### 🔄 Updated Dependencies
+- `openai`: Updated from 0.28.0 to >=1.50.0
+- `azure-cognitiveservices-speech`: Added >=1.40.0 for native Azure Speech integration
+- `validators`: Added >=0.33.0 for URL validation
+- `httpx`: Added >=0.27.0 for modern HTTP client
+- All dependencies updated to latest secure versions
+
+### 🐛 Fixed
+- **API Compatibility**: Fixed deprecated OpenAI API usage
+- **Azure Authentication**: Improved Azure service authentication and error handling
+- **Memory Management**: Better memory handling for large files and audio processing
+- **Edge Cases**: Fixed various edge cases in text processing and audio generation
+
+### ⚠️ Deprecated
+- Support for OpenAI API versions < 1.0
+- Legacy Azure REST API integration
+- Python versions < 3.8
 
 ---
 
 ## [1.1.2] - 2024-10-31
+
 ### Added
 - **Docstrings**: Added detailed docstrings for each function in `app.py`, documenting functionality, parameters, and return values.
 
@@ -16,7 +97,10 @@ All notable changes to this project will be documented in this file.
 - **Dependency Versions**: Updated `requirements.txt` to the latest versions of dependencies, ensuring compatibility and access to the newest features.
 - **Error Messages**: Improved error handling with specific messages for OpenAI and Azure API interactions to enhance debugging and user feedback.
 
+---
+
 ## [1.1.1] - 2024-10-31
+
 ### Updated
 - **README.md**: Revised to include updated setup instructions, usage examples, and detailed descriptions for the OpenAI & Azure Text-to-Speech functionalities.
 - **app.py**: Enhanced to support OpenAI's `gpt-4-turbo` model, enabling higher quality responses and improved API usage.
@@ -25,6 +109,7 @@ All notable changes to this project will be documented in this file.
 ---
 
 ## [1.1.0] - 2024-05-21
+
 ### Added
 - **Voice Selection**: Added multiple voice options (`en-US-AriaNeural`, `en-US-GuyNeural`, `en-GB-RyanNeural`) for Azure TTS.
 - **Customizable Prompt Length**: Introduced slider to control token limit for OpenAI's response.
@@ -38,7 +123,91 @@ All notable changes to this project will be documented in this file.
 ---
 
 ## [1.0.0] - 2023-03-15
+
 ### Initial Release
-- **Text Generation**: Fetches and processes text from a URL, text input, or file upload using OpenAI’s API.
+- **Text Generation**: Fetches and processes text from a URL, text input, or file upload using OpenAI's API.
 - **Text-to-Speech**: Converts generated text to speech using Azure TTS.
 - **Streamlit Interface**: Simple interface with options for text input, URL, and file upload.
+
+---
+
+## Migration Guide
+
+### From v1.x to v2.0.0
+
+#### Environment Variables
+```bash
+# Old (v1.x)
+OPENAI_API_KEY=your_key
+AZURE_API_KEY=your_key
+
+# New (v2.0.0)
+OPENAI_API_KEY=your_key
+AZURE_SPEECH_KEY=your_speech_key
+AZURE_SPEECH_REGION=your_region  # New requirement
+```
+
+#### Python Version
+- Minimum Python version is now 3.8+
+- Update your Python environment if using older versions
+
+#### Dependencies
+```bash
+# Update all dependencies
+pip install -r requirements.txt --upgrade
+```
+
+#### Code Changes (for developers)
+- OpenAI API calls now use the new client pattern
+- Azure integration uses the official Speech SDK
+- All functions now have type hints
+- New exception classes for better error handling
+
+### Security Improvements in v2.0.0
+
+This version includes significant security enhancements:
+- Input validation and sanitization
+- Protection against SSRF and XSS attacks
+- Secure file upload handling
+- API key protection
+- Request timeout limits
+
+### Performance Improvements
+
+- Faster Azure Speech synthesis using native SDK
+- Improved error handling reduces unnecessary API calls
+- Better memory management for large files
+- Optimized text processing algorithms
+
+---
+
+## Support
+
+### Upgrading
+
+Follow these steps to upgrade:
+
+1. **Backup your current installation**
+2. **Update environment variables** (see migration guide above)
+3. **Install updated dependencies**: `pip install -r requirements.txt --upgrade`
+4. **Test your configuration** with the new version
+5. **Review security settings** and update as needed
+
+### Getting Help
+
+- **Bug Reports**: Open an issue on GitHub
+- **Feature Requests**: Use GitHub Discussions
+- **Security Issues**: Report privately to maintainers
+- **General Questions**: Check the FAQ or open a discussion
+
+### Contributing
+
+See [CONTRIBUTING.md](CONTRIBUTING.md) for detailed guidelines on:
+- Code contributions
+- Documentation improvements
+- Bug reporting
+- Feature requests
+
+---
+
+**Note**: This changelog follows the [Keep a Changelog](https://keepachangelog.com/) format. Each version includes sections for Added, Changed, Deprecated, Removed, Fixed, and Security improvements where applicable.
